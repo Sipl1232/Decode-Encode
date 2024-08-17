@@ -28,7 +28,7 @@ const VideoToBase64 = () => {
             ...formData,
         }
         setIsLoading(true)
-        post('/base64_to_ascii', { ...data }, (res) => {
+        post('/video_to_base64', { ...data }, (res) => {
             if (res.status === 'success') {
                 setResponseValue(res.responseValue)
                 AlertBox(res.status, res.message, res.focus);
@@ -60,7 +60,7 @@ const VideoToBase64 = () => {
                 setIsLoading(false);
                 setFileUploaded(`Video Uploaded Successfully - ${file.name}`);
                 setFormData((prev) => ({ ...prev, initialValue: base64Image }));
-                setResponseValue(base64Image)
+                //setResponseValue(base64Image)
             };
         } else {
             setIsLoading(false);
@@ -192,10 +192,10 @@ const VideoToBase64 = () => {
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}> Data URI: </span>  data:audio/mpeg;base64,Ym9keSB7DQogIGNvbG9yOnJlZA0KfQ==</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>   HTML Embed: </span>{`<embed type="video/mp4" src="data:video/mp4;base64,JVBERi0xLTGVuZ3==" />`}</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>    HTML Hyperlink: </span>{`<a href="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZZmNTguMTIuMTAw"></a>`}</li>
-                        <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>    HTML Iframe: </span>{`<iframe src="data:video/mp4;base64,AAAAIGZ0eXBpcAACrQYF//+p3EXpvebTIuMTAw">The “iframe” tag is not supported by your browser.</iframe>`}</li>
+                        <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>    HTML Iframe: </span>{`<iframe src="data:video/mp4;base64,AAAAIGZ0eXBpcAACrQYF//+p3EXpvebTIuMTAw">The Â“iframeÂ” tag is not supported by your browser.</iframe>`}</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>  HTML Object: </span>{` <object type="video/mp4" data="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAuMTIuMTAw"></object>`}</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>  HTML Source: </span>{` <video autoplay controls><source src="data:video/mp4;base64,AAAAIGZ0eXBZWZ0IDIwMDMtMjAxOCAtNTguMTIuMTAw" /></video>`}</li>
-                        <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>  HTML Video: </span>{` <video autoplay controls src="data:video/mp4;base64,AAAAIGZ0eXBpc29tjMW1wNDEIuMTAw">The “video” tag is not supported by your browser.</video>`}</li>
+                        <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}>  HTML Video: </span>{` <video autoplay controls src="data:video/mp4;base64,AAAAIGZ0eXBpc29tjMW1wNDEIuMTAw">The Â“videoÂ” tag is not supported by your browser.</video>`}</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}> JavaScript Popup:</span>{` window.onclick = function () {this.open("data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28TAw");};`}</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}> JavaScript Video:</span>{` var video = document.createElement("video");video.controls = true; video.src = "data:video/mp4;base64,AAAA9tAAACAGlzbIuMTAw"; document.body.appendChild(video); video.play();`}</li>
                         <li style={{ fontSize: '12px', marginTop: "10px" }}><span style={{ fontSize: '13px', fontWeight: "500", marginTop: "10px", textDecoration: "underline" }}> JSON:</span>{` {"video": {  "mime": "video/mp4","data": "c29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF="}}`}</li>
